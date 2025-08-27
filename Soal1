@@ -1,0 +1,38 @@
+package main
+
+import (
+	"fmt"
+)
+
+func fakto(n int) int {
+	if n == 0 {
+		return 1 
+	}
+	result := 1
+	for i := 1; i <= n; i++ {
+		result *= i
+	}
+	return result
+}
+
+func pangdua(n int) int {
+	result := 1
+	for i := 0; i < n; i++ {
+		result *= 2
+	}
+	return result
+}
+
+func jumlah(n int) float64 {
+	if n < 0 {
+		return 0.0 
+	}
+	faktorial := fakto(n)
+	pangkat := pangdua(n)
+
+	if pangkat == 0 {
+		return 0.0 // 
+	}
+
+	return float64(faktorial) / float64(pangkat)
+}
